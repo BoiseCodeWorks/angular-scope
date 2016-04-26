@@ -1,0 +1,27 @@
+<html ng-app="ng-scope">
+<head>
+    <meta charset="UTF-8">
+    <title>ANGULAR SCOPE</title>
+</head>
+<body ng-controller="MainController as mc">
+    <h1>{{mc.message}}</h1>
+    <button ng-click="showCC(1)">Show CC 1</button>
+    <button ng-click="showCC(2)">Show CC 2</button>    
+    
+    <div ng-show="mc.showing === 1" ng-controller="ChildController1 as cc1">
+        <h1>{{cc1.message}}</h1>
+        <h1>{{messageFromScope}}</h1>    
+    </div>
+    
+    <div ng-show="mc.showing === 2" ng-controller="ChildController2 as cc2">
+        <h1>{{cc2.message}}</h1>        
+        <h1>{{messageFromScope}}</h1>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+    <script src="app/app.js"></script>
+    
+    
+</body>
+</html>
